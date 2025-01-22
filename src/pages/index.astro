@@ -9,7 +9,7 @@ import Prose from '../components/Prose.astro';
 import { projects } from './projects/projects';
 import ProjectList from '../components/ProjectList.astro'
 import PostItem from '../components/PostItem.astro';
-import '@/styles/globals.css'
+import { Button } from "@/components/ui/button";
 
 type BlogPost = CollectionEntry<'blog'>;
 
@@ -27,6 +27,7 @@ const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b
             <p>Giveback is a growing collection of animal sanctuaries, beach cleans, cultural exchanges, social impact projects, tours, tree planting, wellbeing experiences and more…</p>
           </div>
         </Prose>
+        <Button variant="outline">Button</Button>
       </div>
       <Image src={Ava} alt="A group of happy children" width={400} loading="eager" class="rounded-3xl mx-4 md:mx-0"/>
 		</div>
