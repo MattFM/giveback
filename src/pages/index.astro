@@ -7,7 +7,7 @@ import type { CollectionEntry } from 'astro:content';
 import Ava from '@src/assets/img/happy-kids.jpg';
 import Prose from '../components/Prose.astro';
 import { projects } from './projects/projects';
-import ProjectList from '../components/ProjectList.astro'
+import ProjectListNew from '../components/ProjectListNew.astro'
 import PostItem from '../components/PostItem.astro';
 import SearchFilter from '../components/SearchFilter.astro';
 
@@ -36,7 +36,7 @@ const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b
 		<main>
       <div>
         <SearchFilter />
-        <ProjectList projects={topProjects}/>
+        <ProjectListNew projects={topProjects}/>
       </div>
       <div class="grid mt-10 place-content-center">
       <div class="join">
