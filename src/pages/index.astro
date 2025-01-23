@@ -22,7 +22,7 @@ const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b
 	<div class='container'>
 		<div class='w-full md:flex md:items-center gap-16 mb-10'>
       <div class="text-pretty leading-9">
-        <div class="badge badge-outline mb-4">10+ projects added this week</div>
+        <div class="badge badge-ghost mb-4">10+ projects added this week</div>
         <h1 class="text-4xl font-bold mb-4">Discover great ways to give back to the places you visit</h1>
         <Prose>
           <div class="text-lg">
@@ -35,13 +35,17 @@ const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b
 		</div>
 		<main>
       <div>
-        <div class="flex justify-between gap-2 mb-1">
-          <h2 class="text-lg font-bold mb-3">Latest Projects</h2>
-          <a href="/projects/" class="inline-block py-2 underline dark:prose-invert">All projects &raquo;</a>
-        </div>
         <SearchFilter />
         <ProjectList projects={topProjects}/>
       </div>
+      <div class="grid mt-10 place-content-center">
+      <div class="join">
+        <button class="join-item btn">1</button>
+        <button class="join-item btn btn-active">2</button>
+        <button class="join-item btn">3</button>
+        <button class="join-item btn">4</button>
+      </div>
+    </div>
       <div class="text-right">
       </div>
       <div class='mt-6 mb-12'>
