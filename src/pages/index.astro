@@ -9,6 +9,7 @@ import Prose from '../components/Prose.astro';
 import { projects } from './projects/projects';
 import ProjectList from '../components/ProjectList.astro'
 import PostItem from '../components/PostItem.astro';
+import SearchFilter from '../components/SearchFilter.astro';
 
 
 type BlogPost = CollectionEntry<'blog'>;
@@ -21,12 +22,14 @@ const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b
 	<div class='container'>
 		<div class='w-full md:flex md:items-center gap-16 mb-10'>
       <div class="text-pretty leading-9">
+        <div class="badge badge-outline mb-4">10+ projects added this week</div>
         <h1 class="text-4xl font-bold mb-4">Discover great ways to give back to the places you visit</h1>
         <Prose>
           <div class="text-lg">
             <p>Giveback is a growing collection of animal sanctuaries, beach cleans, cultural exchanges, social impact projects, tours, tree planting, wellbeing experiences and more…</p>
           </div>
         </Prose>
+        <button class="btn btn-outline">Find out more</button>
       </div>
       <Image src={Ava} alt="A group of happy children" width={400} loading="eager" class="rounded-3xl mx-4 md:mx-0"/>
 		</div>
@@ -36,6 +39,7 @@ const posts = (await getCollection('blog')).sort((a: BlogPost, b: BlogPost) => b
           <h2 class="text-lg font-bold mb-3">Latest Projects</h2>
           <a href="/projects/" class="inline-block py-2 underline dark:prose-invert">All projects &raquo;</a>
         </div>
+        <SearchFilter />
         <ProjectList projects={topProjects}/>
       </div>
       <div class="text-right">
