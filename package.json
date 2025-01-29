@@ -25,6 +25,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.473.0",
+    "notion-astro-loader": "^0.4.0",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
@@ -32,6 +33,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@notionhq/client": "^2.2.15",
     "@tailwindcss/typography": "^0.5.14",
     "daisyui": "^4.12.23",
     "prettier": "^3.3.3",

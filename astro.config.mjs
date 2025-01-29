@@ -11,6 +11,9 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://giveback.guide',
+  experimental: {
+    contentLayer: true,
+  },
   integrations: [mdx(), sitemap(), tailwind({
     applyBaseStyles: false
   }), partytown(), react()],
