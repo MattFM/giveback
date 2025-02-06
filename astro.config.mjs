@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
@@ -14,6 +15,8 @@ export default defineConfig({
   experimental: {
     contentLayer: true,
   },
+  output: 'server',
+  adapter: netlify(),
   integrations: [mdx(), sitemap(), tailwind({
     applyBaseStyles: false
   }), partytown(), react()],

@@ -1,4 +1,10 @@
 import { defineCollection, z } from 'astro:content';
+import { notionLoader } from "notion-astro-loader";
+import {
+	notionPageSchema,
+	propertySchema,
+	transformedPropertySchema,
+  } from "notion-astro-loader/schemas";
 
 const blog = defineCollection({
 	type: 'content',
@@ -19,4 +25,16 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const database = defineCollection({
+	loader: notionLoader({
+	  auth: import.meta.env.NOTION_TOKEN,
+	  database_id: import.meta.env.NOTION_DATABASE_ID,
+	  // Use Notion sorting and filtering
+	  /*filter: {
+		property: "Status",
+		select: { equals: "Published" },
+	  },*/
+	}),
+  });
+
+export const collections = { blog, database };
